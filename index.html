@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>PetCare</h1>
+
+    <h2>Bem-vindo ao PetCare!</h2>
+
+    <p>
+        <span id="digitando"></span><span class="cursor">|</span>
+    </p>
+
+    <!-- FOTOS -->
+    <div class="fotos">
+
+        <div class="coluna">
+            <img class="foto-petts" src="752875262748944721.jpeg" alt="Cachorro e Gato">
+            <img src="Best.jpeg" alt="Pet" width="200">
+            <img src="1123437069566035000.jpeg" alt="Pet" width="200">
+        </div>
+
+        <div class="coluna">
+            <img class="foto-pet" src="cachorro-e-gato-juntos-1.webp" alt="Cachorro">
+            <img class="foto-petss" src="1066086543097615019.jpeg" alt="Vaca">
+        </div>
+
+    </div>
+    
+    <section id="alertas">
+    <h3>🔔 Alertas de saúde e comportamento</h3>
+    <div id="contador-alertas"></div>
+    <div id="painel-alertas"></div>
+</section>
+
+    <!-- CADASTRO DE PETS -->
+    <section id="cadastro">
+        <h3>Cadastrar animal</h3>
+        <input type="text" id="nome" placeholder="Nome do pet">
+        <input type="number" id="idade" placeholder="Idade">
+        <input type="text" id="raca" placeholder="Raça">
+        <input type="number" step="0.1" id="peso" placeholder="Peso (kg)">
+        <button id="btn-cadastrar">Cadastrar</button>
+        <ul id="lista-pets"></ul>
+    </section>
+
+    <!-- VACINAS -->
+    <section id="vacinas">
+        <h3>Cadastrar vacina</h3>
+        <select id="vac-pet">
+            <option value="">Escolha o pet</option>
+        </select>
+        <input type="text" id="vac-nome" placeholder="Vacina (ex: V10)">
+
+        <label>Aplicada em:</label>
+        <input type="date" id="vac-data">
+
+        <label>Próxima dose:</label>
+        <input type="date" id="vac-proxima">
+
+        <button id="btn-vacina">Cadastrar vacina</button>
+        <ul id="lista-vacinas"></ul>
+    </section>
+
+    <!-- PESO -->
+    <section id="secao-peso">
+        <h3>Peso</h3>
+        <select id="peso-pet">
+            <option value="">Escolha o pet</option>
+        </select>
+        <input type="number" step="0.1" id="peso-novo" placeholder="Peso (kg)">
+        <input type="date" id="peso-data">
+        <button id="btn-peso">Registrar peso</button>
+        <ul id="lista-pesos"></ul>
+    </section>
+
+    <section id="consultas">
+    <h3>Consultas veterinárias</h3>
+    <button id="btn-notificacoes">🔔 Ativar notificações</button>
+
+    <select id="cons-pet">
+        <option value="">Escolha o pet</option>
+    </select>
+
+    <label>Data da consulta:</label>
+    <input type="date" id="cons-data">
+
+    <input type="text" id="cons-vet" placeholder="Veterinário / clínica">
+    <input type="text" id="cons-motivo" placeholder="Motivo (ex: check-up)">
+    <input type="text" id="cons-obs" placeholder="Observações / diagnóstico">
+
+    <label>Data de retorno (opcional):</label>
+    <input type="date" id="cons-retorno">
+
+    <button id="btn-consulta">Registrar consulta</button>
+
+    <h4>Histórico de consultas</h4>
+    <select id="cons-filtro">
+        <option value="">Todos os pets</option>
+    </select>
+    <ul id="lista-consultas"></ul>
+                  </section>
+
+ <section id="alimentacao">
+ <h3>Alimentação e dietas</h3>
+
+<p id="dica-alimentar" class="dica"></p>
+
+ <h4>Cadastrar refeição</h4>
+<select id="ali-pet">
+    <option value="">Escolha o pet</option>
+</select>
+
+<label>Horário:</label>
+<input type="time" id="ali-hora">
+
+<input type="text" id="ali-alimento" placeholder="Alimento (ex: ração premium)">
+ <input type="number" id="ali-qtd" placeholder="Quantidade (g)">
+ <input type="text" id="ali-obs" placeholder="Observações (opcional)">
+
+<button id="btn-refeicao">Adicionar refeição</button>
+
+ <h4>Plano alimentar</h4>
+<select id="ali-filtro">
+<option value="">Todos os pets</option>
+ </select>
+<div id="resumo-alimentacao"></div>
+<ul id="lista-refeicoes"></ul>
+</section>
+
+<section id="medicamentos">
+    <h3>Medicamentos</h3>
+
+    <p id="dica-med" class="dica"></p>
+
+    <h4>Cadastrar medicamento</h4>
+    <select id="med-pet">
+        <option value="">Escolha o pet</option>
+    </select>
+    <input type="text" id="med-nome" placeholder="Medicamento">
+    <input type="text" id="med-dose" placeholder="Dose (ex: 1 comprimido)">
+    <input type="text" id="med-horarios" placeholder="Horários (ex: 08:00, 20:00)">
+
+    <label>Início do tratamento:</label>
+    <input type="date" id="med-inicio">
+
+    <label>Fim do tratamento (opcional):</label>
+    <input type="date" id="med-fim">
+
+    <input type="text" id="med-obs" placeholder="Observações (opcional)">
+
+    <button id="btn-medicamento">Adicionar medicamento</button>
+
+    <h4>Tratamentos</h4>
+    <select id="med-filtro">
+        <option value="">Todos os pets</option>
+    </select>
+    <div id="resumo-med"></div>
+    <ul id="lista-medicamentos"></ul>
+</section>
+
+
+<section id="exames">
+    <h3>Exames</h3>
+
+    <h4>Lembretes de exames agendados</h4>
+    <div id="lembretes-exames"></div>
+
+    <h4>Registrar exame</h4>
+    <select id="exa-pet">
+        <option value="">Escolha o pet</option>
+    </select>
+    <input type="text" id="exa-tipo" placeholder="Exame (ex: hemograma)">
+
+    <label>Data de realização:</label>
+    <input type="date" id="exa-data">
+
+    <input type="text" id="exa-lab" placeholder="Laboratório / clínica">
+    <input type="text" id="exa-resultado" placeholder="Resultado (preencha quando sair)">
+    <input type="text" id="exa-obs" placeholder="Observações (opcional)">
+
+    <label>Próximo exame agendado (opcional):</label>
+    <input type="date" id="exa-proximo">
+
+    <button id="btn-exame">Registrar exame</button>
+
+    <h4>Histórico de exames</h4>
+    <select id="exa-filtro">
+        <option value="">Todos os pets</option>
+    </select>
+    <ul id="lista-exames"></ul>
+</section>
+
+
+<section id="monitoramento">
+    <h3>Monitoramento</h3>
+
+    <h4>Alertas</h4>
+    <div id="alertas-mon"></div>
+
+    <h4>Registrar como o pet está</h4>
+    <select id="mon-pet">
+        <option value="">Escolha o pet</option>
+    </select>
+
+    <label>Data:</label>
+    <input type="date" id="mon-data">
+
+    <label>Comportamento:</label>
+    <select id="mon-comp">
+        <option value="Normal">Normal</option>
+        <option value="Agitado">Agitado</option>
+        <option value="Apático / quieto demais">Apático / quieto demais</option>
+        <option value="Ansioso">Ansioso</option>
+        <option value="Agressivo">Agressivo</option>
+        <option value="Escondido">Escondido</option>
+    </select>
+
+    <label>Apetite:</label>
+    <select id="mon-apetite">
+        <option value="Normal">Normal</option>
+        <option value="Diminuído">Diminuído</option>
+        <option value="Aumentado">Aumentado</option>
+        <option value="Não quis comer">Não quis comer</option>
+    </select>
+
+    <label>Nível de estresse:</label>
+    <select id="mon-estresse">
+        <option value="1">1 - Muito calmo 😌</option>
+        <option value="2">2 - Calmo 🙂</option>
+        <option value="3">3 - Moderado 😐</option>
+        <option value="4">4 - Estressado 😟</option>
+        <option value="5">5 - Muito estressado 😰</option>
+    </select>
+
+    <input type="text" id="mon-sintomas" placeholder="Sintomas (ex: vômito, coceira, tosse)">
+    <input type="text" id="mon-obs" placeholder="Observações (opcional)">
+
+    <button id="btn-monitor">Registrar</button>
+
+    <h4>Histórico de monitoramento</h4>
+    <select id="mon-filtro">
+        <option value="">Todos os pets</option>
+    </select>
+    <div id="resumo-mon"></div>
+    <ul id="lista-monitoramento"></ul>
+</section>
+
+
+    <!-- SERVIÇOS -->
+    <h2 class="servicos" id="servicos">Nossos Serviços</h2>
+
+    <div class="bloco-servicos">
+
+        <section>
+            <h3>1. Cadastro dos animais</h3>
+            <li>Nome</li>
+            <li>Idade</li>
+            <li>Raça</li>
+            <li>Peso</li>
+            <li>Nascimento</li>
+            <li>Perfil individual de cada animal</li>
+        </section>
+
+        <section>
+            <h3>Saúde e Vacinas</h3>
+            <li>Registrar vacinas e datas</li>
+            <li>Consultar histórico de vacinas</li>
+            <li>Receber lembretes de próximas doses</li>
+        </section>
+
+        <section>
+            <h3>Consultas veterinárias</h3>
+            <li>Registrar consultas</li>
+            <li>Guardar observações e históricos</li>
+            <li>Lembrar de consultas agendadas</li>
+        </section>
+
+        <section>
+            <h3>Alimentação e dietas</h3>
+            <li>Registrar dietas e horários de alimentação</li>
+            <li>Receber lembretes de refeições</li>
+            <li>Acompanhar peso e crescimento</li>
+            <li>Receber dicas de alimentação saudável</li>
+            <li>Acompanhar evolução do animal</li>
+        </section>
+
+        <section>
+            <h3>Medicamentos</h3>
+            <li>Registrar medicamentos e horários de administração</li>
+            <li>Receber lembretes de administração de medicamentos</li>
+            <li>Acompanhar efeitos colaterais e evolução do tratamento</li>
+            <li>Receber dicas de cuidados com medicamentos</li>
+        </section>
+
+        <section>
+            <h3>Exames</h3>
+            <li>Registrar exames e resultados</li>
+            <li>Receber lembretes de exames agendados</li>
+            <li>Acompanhar evolução do animal</li>
+        </section>
+
+        <section>
+            <h3>Peso</h3>
+            <li>Registrar peso e evolução do animal</li>
+            <li>Receber lembretes de pesagem</li>
+        </section>
+
+        <section>
+            <h3>Monitoramento</h3>
+            <li>Acompanhar comportamento e saúde do animal</li>
+            <li>Acompanhar estresse</li>
+        </section>
+
+        <section>
+            <h3>Alertas</h3>
+            <li>Receber alertas de saúde e comportamento</li>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
