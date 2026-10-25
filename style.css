@@ -8,14 +8,25 @@ body{
     background-color: blanchedalmond;
     font-family: georgia;
 }
+
+
 .servicos{
     margin-top: 40px;
+    scroll-margin-top: 70px;
 }
 
-.bloco-servicos {
-    transform: translateY(-80px);
+.bloco-servicos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+.bloco-servicos section{
+    margin: 0;
+    max-width: none;
+}
   
 .menu{
         transform: translateY(-50px);
