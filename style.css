@@ -1,90 +1,74 @@
+/* ===== BASE ===== */
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(to bottom, #fff3e0, #f3e5ff);
+    font-family: Georgia, serif;
+    padding: 20px;
+}
+
 h1{
-    color:blueviolet;
+    color: blueviolet;
     font-size: 4.5rem;
     margin-top: 10px;
-    margin-bottom: 60px;
-}
-body{
-    background-color: blanchedalmond;
-    font-family: georgia;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(138,43,226,0.3);
 }
 
-
-.servicos{
-    margin-top: 40px;
-    scroll-margin-top: 70px;
+h2{
+    color: #5a3e9b;
+    text-align: center;
 }
 
-.bloco-servicos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+h3{
+    color: #7b4fd1;
+    margin-bottom: 5px;
 }
 
-.bloco-servicos section{
-    margin: 0;
-    max-width: none;
+h4{
+    color: #7b4fd1;
+    margin: 18px 0 6px;
 }
-  
-.menu{
-        transform: translateY(-50px);
-    }
 
+p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* ===== EFEITO DE DIGITAÇÃO ===== */
+.cursor{
+    color: blueviolet;
+    font-weight: bold;
+    animation: piscar 0.8s infinite;
+}
+
+@keyframes piscar{
+    0%, 50%   { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ===== FOTOS ===== */
 .fotos{
-    display:flex;
-    gap:50px;
+    display: flex;
+    gap: 20px;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .coluna{
     display: flex;
     flex-direction: column;
-    gap: 50px;
-}
-
-
-.foto-pet{
-    width: 200px;
-    margin-top:0px;
-    display: block;
-    
-    
-    
-    
-}
- 
-    .foto-petss{
-        width: 200px;
-        margin-top: 5px;
-        display: block;
-        margin-left: auto;
-        margin-right: 5px;
-}
- .foto-petts{
-        width: 400px;
-       
-}
-.foto-petis{
-        width: 90px;
-        transform:translateY(50px);
-       
-}
-
-.fotos-peet{
-    width: 200px;
-    margin-top:50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.fotos{
-    justify-content: center;
+    gap: 20px;
 }
 
 .fotos img{
+    width: 200px;
+    height: auto;
+    display: block;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     transition: transform 0.3s;
@@ -93,14 +77,17 @@ body{
 .fotos img:hover{
     transform: scale(1.08);
 }
+
+/* ===== CARTÕES (SECTION) ===== */
 section{
     background-color: white;
     border-radius: 15px;
     padding: 15px 25px;
     margin: 20px auto;
-    max-width: 500px;
+    max-width: 700px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: transform 0.3s;
+    animation: aparecer 0.6s ease;
 }
 
 section:hover{
@@ -111,23 +98,41 @@ li{
     margin-left: 20px;
     margin-bottom: 4px;
 }
-body{
-    background: linear-gradient(to bottom, #fff3e0, #f3e5ff);
-    font-family: Georgia, serif;
-    padding: 20px;
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-h1{
-    text-align: center;
-    text-shadow: 2px 2px 6px rgba(138,43,226,0.3);
+
+/* ===== SERVIÇOS ===== */
+.servicos{
+    position: relative;
+    clear: both;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    scroll-margin-top: 70px;
 }
-.grade-servicos{
+
+.bloco-servicos{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
+    transform: none;
 }
 
+.bloco-servicos section{
+    margin: 0;
+    max-width: none;
+}
+/* ===== BOTÕES ===== */
 button{
     background: linear-gradient(135deg, #8a2be2, #b57bee);
     color: white;
@@ -148,174 +153,9 @@ button:hover{
 button:active{
     transform: scale(0.96);
 }
-input{
-    padding: 10px 14px;
-    margin: 5px 5px 5px 0;
-    border: 2px solid #d9c2f5;
-    border-radius: 10px;
-    font-family: Georgia, serif;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
 
-input:focus{
-    border-color: #8a2be2;
-    box-shadow: 0 0 6px rgba(138,43,226,0.35);
-}
-#lista-pets{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-pets li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#lista-pets li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    background: #e74c8b;
-}
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-section{
-    animation: aparecer 0.6s ease;
-}
-::-webkit-scrollbar{
-    width: 10px;
-}
-
-::-webkit-scrollbar-track{
-    background: #f3e5ff;
-}
-
-::-webkit-scrollbar-thumb{
-    background: #b57bee;
-    border-radius: 10px;
-}
-.menu-topo{
-    position: sticky;
-    top: 0;
-    background: rgba(138,43,226,0.9);
-    padding: 12px;
-    text-align: center;
-    border-radius: 0 0 15px 15px;
-    z-index: 100;
-}
-
-.menu-topo a{
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-}
-
-.menu-topo a:hover{
-    text-decoration: underline;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-@media (max-width: 600px){
-    h1{
-        font-size: 2.8rem;
-    }
-
-    .fotos img{
-        width: 140px;
-    }
-
-    section{
-        margin: 15px 10px;
-    }
-}
-body.escuro input{
-    background: #2d2a40;
-    color: white;
-    border-color: #5a3e9b;
-}
-
-body.escuro #lista-pets li{
-    background: #3a3654;
-}
-
-body.escuro h2,
-body.escuro h3{
-    color: #d9c2f5;
-}
-.cursor{
-    color: blueviolet;
-    font-weight: bold;
-    animation: piscar 0.8s infinite;
-}
-
-@keyframes piscar{
-    0%, 50%   { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-
-
-#lista-vacinas{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-vacinas li{
-    background: #f7f0ff;
-    border-left: 5px solid #2ecc71;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-vacinas li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-vacinas li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#vacinas label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#vacinas button{
-    margin-top: 10px;
-}
-
-#lista-vacinas li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    background: #e74c8b;
-    margin-left: 8px;
-}
-
+/* ===== CAMPOS DE FORMULÁRIO ===== */
+input,
 select{
     padding: 10px 14px;
     margin: 5px 5px 5px 0;
@@ -325,246 +165,111 @@ select{
     font-size: 1rem;
     outline: none;
     background: white;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input:focus,
 select:focus{
     border-color: #8a2be2;
     box-shadow: 0 0 6px rgba(138,43,226,0.35);
 }
 
-body.escuro select{
-    background: #2d2a40;
-    color: white;
-    border-color: #5a3e9b;
-}
-#lista-pesos{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-pesos li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-pesos li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-}
-
-body.escuro #lista-pesos li{
-    background: #3a3654;
-}
-#lista-consultas{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-consultas li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-consultas li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-consultas li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#lista-consultas li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-}
-
-#consultas label{
+#vacinas label,
+#consultas label,
+#alimentacao label,
+#medicamentos label,
+#exames label,
+#monitoramento label{
     display: block;
     margin-top: 8px;
     font-size: 0.9rem;
 }
 
-#consultas h4{
-    color: #7b4fd1;
-    margin: 18px 0 6px;
-}
-
-body.escuro #lista-consultas li{
-    background: #3a3654;
-}
-#lista-consultas{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-consultas li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-consultas li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-consultas li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#lista-consultas li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-}
-
-#consultas label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#consultas h4{
-    color: #7b4fd1;
-    margin: 18px 0 6px;
-}
-
-body.escuro #lista-consultas li{
-    background: #3a3654;
-}
-#lista-consultas{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-consultas li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-consultas li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-consultas li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#lista-consultas li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-}
-
-#consultas label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#consultas h4{
-    color: #7b4fd1;
-    margin: 18px 0 6px;
-}
-
-body.escuro #lista-consultas li{
-    background: #3a3654;
-}
-#lista-consultas{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-consultas li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-consultas li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-consultas li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#lista-consultas li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-}
-
-#consultas label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#consultas h4{
-    color: #7b4fd1;
-    margin: 18px 0 6px;
-}
-
-body.escuro #lista-consultas li{
-    background: #3a3654;
-}
-.dica{
-    background: #f3e5ff;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 1rem;
-}
-
-#alimentacao label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#alimentacao button{
+#cadastro button,
+#vacinas button,
+#secao-peso button,
+#consultas button,
+#alimentacao button,
+#medicamentos button,
+#exames button,
+#monitoramento button{
     margin-top: 10px;
 }
 
-#lista-refeicoes{
+/* ===== LISTAS (TODAS COM O MESMO ESTILO) ===== */
+#lista-pets,
+#lista-pesos,
+#lista-vacinas,
+#lista-consultas,
+#lista-refeicoes,
+#lista-medicamentos,
+#lista-exames,
+#lista-monitoramento{
     list-style: none;
     padding: 0;
 }
 
-#lista-refeicoes li{
+#lista-pets li,
+#lista-pesos li,
+#lista-vacinas li,
+#lista-consultas li,
+#lista-refeicoes li,
+#lista-medicamentos li,
+#lista-exames li,
+#lista-monitoramento li{
     background: #f7f0ff;
     border-left: 5px solid #8a2be2;
     border-radius: 10px;
     padding: 10px 15px;
     margin: 10px 0;
     margin-left: 0;
+}
+
+#lista-pets li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista-vacinas li{
+    border-left-color: #2ecc71;
+}
+
+/* botões pequenos dentro das listas */
+#lista-pets li button,
+#lista-pesos li button,
+#lista-vacinas li button,
+#lista-consultas li button,
+#lista-refeicoes li button,
+#lista-medicamentos li button,
+#lista-exames li button,
+#lista-monitoramento li button,
+.lembrete button{
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    margin: 6px 8px 0 0;
+}
+
+#lista-pets li button,
+#lista-vacinas li button{
+    background: #e74c8b;
+}
+
+/* ===== AVISOS (AMARELO, VERMELHO, VERDE) ===== */
+#lista-vacinas li.proxima,
+#lista-consultas li.proxima,
+#lista-exames li.proxima,
+#lista-monitoramento li.proxima,
+#lista-medicamentos li.futuro{
+    border-left-color: #f39c12;
+    background: #fff6e5;
+}
+
+#lista-vacinas li.atrasada,
+#lista-consultas li.atrasada,
+#lista-monitoramento li.atrasada{
+    border-left-color: #e74c3c;
+    background: #ffeaea;
 }
 
 #lista-refeicoes li.feita{
@@ -572,11 +277,48 @@ body.escuro #lista-consultas li{
     background: #eafaf1;
 }
 
-#lista-refeicoes li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin-left: 8px;
-    margin-top: 0;
+#lista-medicamentos li.encerrado{
+    border-left-color: #999;
+    background: #efefef;
+    color: #666;
+}
+/* ===== LEMBRETES E ALERTAS ===== */
+#lembretes-vacinas,
+#lembretes-exames,
+#alertas-mon{
+    margin-bottom: 15px;
+}
+
+.lembrete{
+    border-left: 5px solid #f39c12;
+    background: #fff6e5;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 8px 0;
+}
+
+.lembrete.atrasada{
+    border-left-color: #e74c3c;
+    background: #ffeaea;
+}
+
+#contador-alertas{
+    font-weight: bold;
+    color: #7b4fd1;
+    margin-bottom: 8px;
+}
+
+#painel-alertas{
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+/* ===== ALIMENTAÇÃO, MEDICAMENTOS E RESUMOS ===== */
+.dica{
+    background: #f3e5ff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
 }
 
 .resumo-pet{
@@ -585,53 +327,6 @@ body.escuro #lista-consultas li{
     border-radius: 10px;
     padding: 8px 15px;
     margin: 8px 0;
-}
-
-body.escuro .dica,
-body.escuro #lista-refeicoes li,
-body.escuro .resumo-pet{
-    background: #3a3654;
-    color: white;
-}
-#medicamentos label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#medicamentos button{
-    margin-top: 10px;
-}
-
-#lista-medicamentos{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-medicamentos li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-medicamentos li.futuro{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-medicamentos li.encerrado{
-    border-left-color: #999;
-    background: #efefef;
-    color: #666;
-}
-
-#lista-medicamentos li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin: 6px 8px 0 0;
 }
 
 .doses{
@@ -647,7 +342,56 @@ body.escuro .resumo-pet{
     font-size: 0.9rem;
 }
 
-body.escuro #lista-medicamentos li{
+/* ===== BARRA DE ROLAGEM ===== */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f3e5ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #b57bee;
+    border-radius: 10px;
+}
+
+/* ===== MODO ESCURO ===== */
+body.escuro{
+    background: #1e1b2e;
+    color: white;
+}
+
+body.escuro section{
+    background-color: #2d2a40;
+    color: white;
+}
+
+body.escuro h2,
+body.escuro h3,
+body.escuro h4,
+body.escuro #contador-alertas{
+    color: #d9c2f5;
+}
+
+body.escuro input,
+body.escuro select{
+    background: #2d2a40;
+    color: white;
+    border-color: #5a3e9b;
+}
+
+body.escuro #lista-pets li,
+body.escuro #lista-pesos li,
+body.escuro #lista-vacinas li,
+body.escuro #lista-consultas li,
+body.escuro #lista-refeicoes li,
+body.escuro #lista-medicamentos li,
+body.escuro #lista-exames li,
+body.escuro #lista-monitoramento li,
+body.escuro .lembrete,
+body.escuro .dica,
+body.escuro .resumo-pet{
     background: #3a3654;
     color: white;
 }
@@ -656,108 +400,25 @@ body.escuro #lista-medicamentos li.encerrado{
     background: #2a2838;
     color: #aaa;
 }
-#exames label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
 
-#exames button{
-    margin-top: 10px;
-}
+/* ===== CELULAR ===== */
+@media (max-width: 600px){
+    h1{
+        font-size: 2.8rem;
+    }
 
-#lista-exames{
-    list-style: none;
-    padding: 0;
-}
+    .fotos img{
+        width: 140px;
+    }
 
-#lista-exames li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
+    section{
+        margin: 15px 10px;
+        padding: 15px;
+    }
 
-#lista-exames li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-exames li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin: 6px 8px 0 0;
-}
-
-#lembretes-exames{
-    margin-bottom: 15px;
-}
-
-body.escuro #lista-exames li{
-    background: #3a3654;
-    color: white;
-}
-#monitoramento label{
-    display: block;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-#monitoramento button{
-    margin-top: 10px;
-}
-
-#alertas-mon{
-    margin-bottom: 15px;
-}
-
-#lista-monitoramento{
-    list-style: none;
-    padding: 0;
-}
-
-#lista-monitoramento li{
-    background: #f7f0ff;
-    border-left: 5px solid #8a2be2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: 10px 0;
-    margin-left: 0;
-}
-
-#lista-monitoramento li.proxima{
-    border-left-color: #f39c12;
-    background: #fff6e5;
-}
-
-#lista-monitoramento li.atrasada{
-    border-left-color: #e74c3c;
-    background: #ffeaea;
-}
-
-#lista-monitoramento li button{
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    margin: 6px 8px 0 0;
-}
-
-body.escuro #lista-monitoramento li{
-    background: #3a3654;
-    color: white;
-}
-#contador-alertas{
-    font-weight: bold;
-    color: #7b4fd1;
-    margin-bottom: 8px;
-}
-
-#painel-alertas{
-    max-height: 350px;
-    overflow-y: auto;
-}
-
-body.escuro #contador-alertas{
-    color: #d9c2f5;
+    #lista-pets li{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 }
